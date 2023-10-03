@@ -1,0 +1,15 @@
+{
+  "name": "interpreter",
+  "version": "0.0.0",
+  "description": "Simpl.js interpreter",
+  "main": "index.js",
+  "author": "Samsonium",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "esbuild ./src/main.js --outfile=./build/interpreter.js --minify --bundle --sourcemap --target=chrome58,firefox57,safari11,edge16"
+  },
+  "devDependencies": {
+    "esbuild": "latest"
+  }
+}

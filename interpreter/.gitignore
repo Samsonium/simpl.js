@@ -1,0 +1,9 @@
+/*
+
+# Dirs
+!/src
+!/tests
+
+# Files
+!/.gitignore
+!/package.json
