@@ -1,0 +1,13 @@
+{
+  "name": "simpl.js",
+  "version": "0.0.0",
+  "description": "Simple language written in JavaScript",
+  "main": "index.js",
+  "author": "Samsonium",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "./website",
+    "./interpreter"
+  ]
+}
