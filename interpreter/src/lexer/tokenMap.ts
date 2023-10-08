@@ -7,7 +7,10 @@ const tokenMap: Record<string, TokenInfo> = {
 
     // ------- [ Reserved words ]
 
-    'DataType': { match: /^(str|num|bool|obj)/ },
+    'DataType': {
+        match: /^(str|num|bool|obj)/,
+        valueRequired: true
+    },
 
     // Input-output
     'IO_Input':  { match: /^(prompt)/ },
@@ -43,9 +46,18 @@ const tokenMap: Record<string, TokenInfo> = {
 
     // ------- [ Dynamic ]
 
-    'Data_String':  { match: /^"([^"]*)"|'([^']*)'/ },
-    'Data_Number':  { match: /^(\d*(\.\d)?)/ },
-    'Data_Boolean': { match: /^(true|false)/ },
+    'Data_String':  {
+        match: /^"([^"]*)"|^'([^']*)'/,
+        valueRequired: true
+    },
+    'Data_Number':  {
+        match: /^([+-]?([0-9]*[.])?[0-9]+)/,
+        valueRequired: true
+    },
+    'Data_Boolean': {
+        match: /^(true|false)/,
+        valueRequired: true
+    },
 
     // Blocks
     'Block_Start':    { match: /^(\{)/ },
@@ -54,6 +66,8 @@ const tokenMap: Record<string, TokenInfo> = {
     'Parens_End':     { match: /^(\))/ },
     'Brackets_Start': { match: /^(\[)/ },
     'Brackets_End':   { match: /^(])/ },
+
+    'Semi': { match: /^(;)/ },
 
     'Word': {
         match: /^([A-z$_][A-z0-9$_]*)/,

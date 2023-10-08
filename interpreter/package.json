@@ -10,6 +10,7 @@
     "build": "esbuild src/main.ts --outfile=./build/interpreter.js --minify --bundle --sourcemap --platform=node"
   },
   "devDependencies": {
-    "esbuild": "latest"
+    "esbuild": "latest",
+    "vitest": "latest"
   }
 }
