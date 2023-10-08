@@ -7,11 +7,6 @@ const tokenMap: Record<string, TokenInfo> = {
 
     // ------- [ Reserved words ]
 
-    'DataType': {
-        match: /^(str|num|bool|obj)/,
-        valueRequired: true
-    },
-
     // Input-output
     'IO_Input':  { match: /^(prompt)/ },
     'IO_Output': { match: /^(write)/ },
@@ -44,12 +39,43 @@ const tokenMap: Record<string, TokenInfo> = {
     'Asn_Mod': { match: /^(%=)/ },
     'Asn_Pow': { match: /^(\^=)/ },
 
+    // Math operators
+    'Math_Add': { match: /^(\+)/ },
+    'Math_Sub': { match: /^(-)/ },
+    'Math_Mul': { match: /^(\*)/ },
+    'Math_Div': { match: /^(\/)/ },
+    'Math_Mod': { match: /^(%)/ },
+    'Math_Pow': { match: /^(\^)/ },
+
     // Unary operators
     'U_Not':   { match: /^(!)/ },
     'U_Plus':  { match: /^(\+)/ },
     'U_Minus': { match: /^(-)/ },
 
+    // Type casting feature
+    'TypeCast': { match: /^(->)/ },
+
+    // Blocks
+    'Block_Start':    { match: /^(\{)/ },
+    'Block_End':      { match: /^(})/ },
+    'Parens_Start':   { match: /^(\()/ },
+    'Parens_End':     { match: /^(\))/ },
+    'Brackets_Start': { match: /^(\[)/ },
+    'Brackets_End':   { match: /^(])/ },
+
+    // Support characters
+    'Dot':   { match: /^(\.)/ },
+    'Comma': { match: /^(,)/ },
+    'Semi':  { match: /^(;)/ },
+    'Colon': { match: /^(:)/ },
+    'Arrow': { match: /^(=>)/ },
+
     // ------- [ Dynamic ]
+
+    'DataType': {
+        match: /^(str|num|bool|obj|fn)/,
+        valueRequired: true
+    },
 
     'Data_String':  {
         match: /^"([^"]*)"|^'([^']*)'/,
@@ -64,18 +90,8 @@ const tokenMap: Record<string, TokenInfo> = {
         valueRequired: true
     },
 
-    // Blocks
-    'Block_Start':    { match: /^(\{)/ },
-    'Block_End':      { match: /^(})/ },
-    'Parens_Start':   { match: /^(\()/ },
-    'Parens_End':     { match: /^(\))/ },
-    'Brackets_Start': { match: /^(\[)/ },
-    'Brackets_End':   { match: /^(])/ },
-
-    'Semi': { match: /^(;)/ },
-
     'Word': {
-        match: /^([A-z$_][A-z0-9$_]*)/,
+        match: /^([A-Za-z$_][A-Za-z0-9$_]*)/,
         valueRequired: true
     }
 };
