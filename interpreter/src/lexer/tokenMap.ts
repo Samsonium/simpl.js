@@ -44,6 +44,11 @@ const tokenMap: Record<string, TokenInfo> = {
     'Asn_Mod': { match: /^(%=)/ },
     'Asn_Pow': { match: /^(\^=)/ },
 
+    // Unary operators
+    'U_Not':   { match: /^(!)/ },
+    'U_Plus':  { match: /^(\+)/ },
+    'U_Minus': { match: /^(-)/ },
+
     // ------- [ Dynamic ]
 
     'Data_String':  {
@@ -51,7 +56,7 @@ const tokenMap: Record<string, TokenInfo> = {
         valueRequired: true
     },
     'Data_Number':  {
-        match: /^([+-]?([0-9]*[.])?[0-9]+)/,
+        match: /^(([0-9]*[.])?[0-9]+)/,
         valueRequired: true
     },
     'Data_Boolean': {
