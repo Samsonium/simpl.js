@@ -8,12 +8,12 @@ const samples = {
     `,
     calculator: `
         Map<str, fn<num>> operations = {
-            '+': fn(a, b) => a + b,
-            '-': fn(a, b) => a - b,
-            '*': fn(a, b) => a * b,
-            '/': fn(a, b) => a / b,
-            '%': fn(a, b) => a % b,
-            '^': fn(a, b) => a ^ b
+            '+': (a, b) => a + b,
+            '-': (a, b) => a - b,
+            '*': (a, b) => a * b,
+            '/': (a, b) => a / b,
+            '%': (a, b) => a % b,
+            '^': (a, b) => a ^ b
         };
         
         num a = prompt('x: ') -> try int;
@@ -28,7 +28,7 @@ const samples = {
         do op = prompt('Operation (+, -, *, /, %, ^): ');
         while (!operations.has(op));
         
-        
+        write(operations[op](a, b));
     `
 };
 export default samples;
