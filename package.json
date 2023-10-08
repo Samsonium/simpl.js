@@ -1,7 +1,7 @@
 {
   "name": "simpl.js",
   "version": "0.0.0",
-  "description": "Simple language written in JavaScript",
+  "description": "Simple language written in TypeScript",
   "main": "index.js",
   "author": "Samsonium",
   "license": "MIT",

@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "esbuild ./src/main.js --outfile=./build/interpreter.js --minify --bundle --sourcemap --target=chrome58,firefox57,safari11,edge16"
+    "build": "esbuild src/main.ts --outfile=./build/interpreter.js --minify --bundle --sourcemap --platform=node"
   },
   "devDependencies": {
     "esbuild": "latest"
